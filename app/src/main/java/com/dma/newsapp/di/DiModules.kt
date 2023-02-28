@@ -1,5 +1,6 @@
 package com.dma.newsapp.di
 
+import com.dma.newsapp.NewsRepository
 import com.dma.newsapp.retrofit.response.NewsInterface
 import dagger.Module
 import dagger.Provides
@@ -25,6 +26,12 @@ object DiModules {
     @Provides
     fun provideNewsInterface(retrofit: Retrofit):NewsInterface{
         return retrofit.create(NewsInterface::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideRepository(newsInterface: NewsInterface):NewsRepository{
+        return NewsRepository(newsInterface)
     }
 
 }
