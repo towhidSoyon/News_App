@@ -1,5 +1,9 @@
 package com.dma.newsapp.retrofit.response
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Article(
     val author: String,
     val content: Any,
@@ -9,4 +13,4 @@ data class Article(
     val title: String,
     val url: String,
     val urlToImage: Any
-)
+): Parcelable

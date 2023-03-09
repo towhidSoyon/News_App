@@ -9,7 +9,13 @@
         android:id="@+id/detailsFragment"
         android:name="com.dma.newsapp.fragment.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="article"
+            app:argType="com.dma.newsapp.retrofit.response.Article"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.dma.newsapp.fragment.NewsFragment"

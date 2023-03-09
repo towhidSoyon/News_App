@@ -13,7 +13,7 @@ import com.dma.newsapp.retrofit.response.Article
 import com.dma.newsapp.retrofit.response.NewsInterface
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class NewsPagingAdapter/*(val adapterClicklListioners: AdapterClicklListioners) */:
+class NewsPagingAdapter(val adapterClicklListioners: AdapterClickListioners) :
     PagingDataAdapter<Article, NewsPagingAdapter.MyViewHolder>(DIFF_UTIL) {
 
     companion object {
@@ -43,9 +43,9 @@ class NewsPagingAdapter/*(val adapterClicklListioners: AdapterClicklListioners) 
             .into(holder.viewDataBinding.root.image_list_item)
 
 
-        /*holder.viewDataBinding.root.list_item_root.setOnClickListener {
-            adapterClicklListioners.clickListioners(item)
-        }*/
+        holder.viewDataBinding.root.list_item_root.setOnClickListener {
+            adapterClicklListioners.clickListener(item)
+        }
 
     }
 
